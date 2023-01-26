@@ -1,0 +1,418 @@
+/******************************************* IMPORT *******************************************/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/******************************************* ROOT *******************************************/
+:root {
+    --primary-color: whitesmoke; /* #F5F5F5F5F */
+    --second-color: black;
+    --third-color: white;
+    --gold-color: gold;
+}
+
+/******************************************* HTML BASIC TAGS *******************************************/
+* {
+    box-sizing: border-box !important;
+    
+    scroll-behavior: smooth;
+
+    /* font-family: 'Ubuntu', sans-serif !important; */
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    color: var(--second-color);
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+/************************** TOP **************************/
+a > .bxs-chevrons-up {
+    padding: 10px;
+
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+
+    border-radius: 100%;
+    border: 2px solid var(--second-color);
+
+    -ms-transition: 0.4s ease-in-out;
+    -webkit-transition: 0.4s ease-in-out;
+    transition: 0.8s ease-in-out;
+
+    background-color: var(--primary-color);
+}
+
+a > .bxs-chevrons-up:hover {
+    color: var(--gold-color);
+    border: 2px solid var(--gold-color);
+    background-color: var(--second-color);
+
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+}
+
+/******************************************* HEADER *******************************************/
+header {
+    width: 100%;
+    height: 5.5rem;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    position: sticky;
+    z-index: 2;
+    top: 0px;
+
+    background-color: var(--second-color);
+}
+
+header a {
+    margin: auto;
+}
+
+header img {
+    padding-left: 1.4em;
+    top: 1rem;
+    width: 12rem;
+    margin: auto;
+}
+
+nav ul {
+    height: 6rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav a {    
+    padding: 2px 7px;
+
+    text-decoration: none;
+    
+    color: var(--primary-color);
+}
+
+nav a:hover {
+    color: var(--gold-color);
+    border-bottom: 1px solid var(--gold-color);
+
+    transition: 0.8s;
+}
+
+header nav #menu-tablet-phone {
+    /* display: none; */
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+header .tablet-phone {
+    display: none;
+
+    text-align: right;
+    align-self: center;
+    align-items: right;
+}
+
+#open-menu {
+    color: var(--gold-color);
+    cursor: pointer;
+    padding-right: 1rem;
+}
+
+.phone-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%; 
+    min-height: 42rem;
+    padding: 20px;
+    background: var(--second-color);
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.7s;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-menu img {
+    position: absolute; 
+    left: 1.3rem;
+    top: 1rem;
+}
+
+.phone-menu ul {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+}
+
+.phone-menu li {
+    text-align: center;
+    margin: 3rem auto;
+    font-size: 1.5rem;
+    
+}
+
+.phone-menu a {
+    text-align: center;
+}
+
+.phone-menu.active {
+    right: 0;
+}
+
+#close-menu {
+    position: absolute; 
+    right: 1rem;
+    font-size: 3rem;
+    color: var(--gold-color);
+}
+
+/******************************************* BODY *******************************************/
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:25px;
+    min-height: 30vh;
+    /*background: linear-gradient(90deg, #14171c 60%, #1d2c34 40.1%);*/
+}
+
+.container form{
+    padding:20px;
+    width:700px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+}
+
+.container form .row .col{
+    flex:1 1 250px;
+}
+
+.container form .row .col .title{
+    font-size: 20px;
+    color:#333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+    margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+    margin-bottom: 10px;
+    display: block;
+}
+
+.container form .row .col .inputBox input{
+    width: 100%;
+    border:1px solid #ccc;
+    padding:10px 15px;
+    font-size: 15px;
+    text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+    border:1px solid #000;
+}
+
+.container form .row .col .flex{
+    display: block;
+    gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+    margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.missatge {
+    height: 8rem;
+    width: 100%;
+    justify-content: center;
+    resize: none;
+}
+
+.container form .submit-btn{
+    width: 100%;
+    padding:12px;
+    font-size: 17px;
+    background: #27ae60;
+    color:#fff;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+    background: #2ecc71;
+}
+
+.container form .back-btn{
+    width: 50%;
+
+    height: 30px;
+    font-size: 14px;
+    background: #ab0b0b;
+    color:#fff;
+    cursor: pointer;
+    position: relative;
+    margin-left: 165px;
+    margin-top: 20px;
+}
+
+.container form .back-btn:hover{
+    background: #e50707;
+}
+
+
+/******************************************* FOOTER *******************************************/
+footer {
+    margin: 50px auto 0px;
+
+    color: var(--second-color);
+
+    background-color: var(--second-color);
+}
+
+footer #footer {
+    width: 100%;
+    height: 100%;
+    margin: 50px auto 0px;
+    padding-bottom: 50px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+
+    background-color: var(--second-color);
+}
+
+/******************************************* FOOTER - SPONSOR *******************************************/
+footer #sponsor-footer {
+    margin: 50px auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+
+    background-color: var(--third-color) !important;
+}
+
+footer #sponsor-footer img {
+    margin: auto;
+    width: 10rem;
+}
+
+/******************************************* FOOTER - ID *******************************************/
+#social-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+#social-media a .bx { color: var(--primary-color); }
+#social-media a .bx:hover { color: var(--gold-color); transition: 0.2s; }
+
+footer #contact-footer {
+    text-align: center;
+}
+
+footer #contact-footer p {
+    padding: 10px;
+    
+    color: var(--primary-color); 
+}
+
+.gold { color: var(--gold-color); }
+
+footer #sponsor-footer {
+    background-color: var(--second-color);
+    text-align: center;
+}
+
+#logo img {
+    width: 10rem;
+    margin: auto;
+
+    display: block;
+}
+
+#test {
+    height: 500px;
+}
+
+/******************************************* RESPONSIVE *******************************************/
+@media (min-width: 100px) and (max-width: 480px) {
+    a > .bxs-chevrons-up {
+        display: none;
+    }
+    
+
+    header .desktop-laptop {
+        display: none;
+    }
+
+    /* header > nav > #menu-tablet-phone {
+        display: block;        
+    } */
+
+    /* footer #footer #logo {
+        display: none;
+    } */
+
+    footer #sponsor-footer {
+        padding: 19px 25px;
+
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        grid-gap: 25px;
+    }
+
+    footer #sponsor-footer img {
+        max-width: 100%;
+        margin: 10px auto;     
+    }
+
+    footer #footer {
+        padding-bottom: 0px;
+
+        grid-template-columns: 1fr;
+        grid-row-gap: 3rem;
+
+        flex-direction: column;  
+
+        font-size: 0.8rem;
+    }    
+
+    footer #footer #logo img {
+        width: 8rem;
+    }
+
+    header .tablet-phone {
+        display: block;
+    }
+}

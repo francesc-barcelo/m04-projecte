@@ -1,0 +1,5 @@
+Actualització:
+	- Media/idiomes
+	- CSS/MainStyle.css
+	- CSS/not-from-us.css
+	- Web/index.html
